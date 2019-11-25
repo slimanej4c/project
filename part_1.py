@@ -194,13 +194,18 @@ class part_1:
                             bsite = Button(frame_canvas1, width=self.wframe5, height=self.hframe2button, text=vtext, bg=mbg)
                             bsite.grid(row=1 + n, column=i - f)
 
-                        """def chose(bsite1):
+                        def goaddpro(bsite1):
+                            import part_2
                             site_name = bsite1["text"]
-                            processus_db.create_pro(site_name)
+                            gopart2=part_2.part_2(self.root,site_name,bsite1)
+                            gopart2.global_()
+
+
+                            """processus_db.create_pro(site_name)
                             go_part_3 = processus.part_3(self.root, site_name, bsite1)
-                            go_part_3.processus_hse()
+                            go_part_3.processus_hse()"""
         
-                        bsite["command"] = lambda bsite1=bsite: bsite.configure(command=chose(bsite1))"""
+                        bsite["command"] = lambda bsite1=bsite: bsite.configure(command=goaddpro(bsite1))
 
                     canvas_site.create_window(0, 0, window=frame_canvas1)
                     frame_canvas1.update_idletasks()
